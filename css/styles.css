@@ -1,0 +1,598 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f8f7f3;
+    color: #202020;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 48px;
+    margin-bottom: 166px;
+}
+
+header p {
+    margin-bottom: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+nav a {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+a {
+    color: #202020;
+    text-decoration: none;
+}
+
+main {
+    padding: 0 48px;
+} 
+
+footer {
+    padding: 0 48px 32px;
+}
+
+section {
+
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin-bottom: 9px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: left;
+}
+
+h2 {
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+p {
+    margin-bottom: 24px;
+}
+
+article {
+    margin-bottom: 24px;
+}
+
+.presentacion {
+    margin-bottom: 56px;
+}
+
+.presentacion p {
+    font-size: 16px;
+    color: #686863;
+}
+
+.proyectos {
+    padding-bottom: 64px;
+}
+
+.proyectos article {
+    margin-bottom: 32px;
+}
+
+.proyectos img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 6px;
+}
+
+.proyectos h2 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #686863;
+}
+
+.proyectos a {
+    color: #686863;
+    text-decoration: underline;
+}
+
+.proyectos-inicio .listado-proyectos {
+    display: flex;
+    gap: 24px;
+}
+
+.proyectos-inicio .listado-proyectos article {
+
+    width: calc((100% - 48px) / 3);
+}
+
+.proyectos-inicio .listado-proyectos picture {
+    display: block;
+}
+
+.proyectos-inicio .listado-proyectos img {
+    display: block;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    object-position: center;
+}
+
+.proyectos-inicio .enlace-proyecto {
+    display: block;
+}
+
+.proyectos-inicio .enlace-proyecto:focus-visible {
+    outline: 2px solid #202020;
+    outline-offset: 4px;
+}
+
+.listado-proyectos p {
+    margin-bottom: 16px;
+    color: #686863;
+}
+
+.pagina-inicio .accesos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    padding-bottom: 64px;
+}
+
+.pagina-inicio .accesos section {
+    margin-bottom: 0;
+}
+
+.pagina-inicio .accesos h2 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.pagina-inicio .accesos a {
+    color: #686863;
+    text-decoration: underline;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    color: #686863;
+}
+
+.estudio-footer {
+    margin-bottom: 0;
+}
+
+.estudio-footer h2 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.footer p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+
+
+/* Cabecera y footer compartidos */
+body > header,
+.pagina-inicio > main,
+.pagina-servicios > main,
+.pagina-contacto > main,
+body > footer {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boton-menu {
+    display: none;
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border: 1px solid #686863;
+    background-color: transparent;
+    color: #202020;
+    cursor: pointer;
+}
+
+.boton-menu:focus-visible,
+body > header nav a:focus-visible {
+    outline: 2px solid #202020;
+    outline-offset: 4px;
+}
+
+
+.icono-menu {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.icono-menu::before,
+.icono-menu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.icono-menu::before {
+    top: -7px;
+}
+
+.icono-menu::after {
+    top: 7px;
+}
+
+/* Oculto JavaScript. */
+#navegacion-principal[hidden] {
+    display: none;
+}
+
+/* Cabecera responsive compartida. */
+@media (max-width: 900px) {
+    body > header {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+        padding: 32px 24px;
+        margin-bottom: 96px;
+    }
+
+    .boton-menu:not([hidden]) {
+        display: block;
+    }
+
+    body > header nav {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    body > header nav a {
+        display: block;
+        padding: 12px 0;
+    }
+}
+
+/* Inicio y footer movil */
+@media (max-width: 768px) {
+    .pagina-inicio > main {
+        padding: 0 24px;
+    }
+
+    .pagina-inicio .listado-proyectos {
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 32px;
+    }
+
+    .pagina-inicio .listado-proyectos article {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .pagina-inicio .accesos {
+        flex-direction: column;
+        gap: 32px;
+        padding-bottom: 64px;
+    }
+
+    body > footer {
+        padding: 0 24px 32px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+}
+
+/* CSS Servicios */
+.pagina-servicios .presentacion-servicios {
+    margin-bottom: 64px;
+}
+
+.pagina-servicios h1 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #202020;
+}
+
+.pagina-servicios .bajada-servicios {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #686863;
+    max-width: 640px;
+    margin-bottom: 40px;
+}
+
+.pagina-servicios .nota-servicios {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #686863;
+    margin-bottom: 0;
+}
+
+.pagina-servicios .listado-servicios {
+    margin-bottom: 64px;
+}
+
+.pagina-servicios .item-servicio {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(104, 104, 99, 0.3);
+}
+
+.pagina-servicios .item-servicio h2 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #202020;
+    margin-bottom: 12px;
+}
+
+.pagina-servicios .numero-servicio {
+    font-weight: 400;
+    color: #202020;
+    margin-right: 8px;
+}
+
+.pagina-servicios .item-servicio p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #686863;
+    margin-bottom: 0;
+}
+
+.pagina-servicios .cierre-servicios {
+    padding-bottom: 96px;
+}
+
+.pagina-servicios .cierre-servicios p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #686863;
+    max-width: 520px;
+    margin-bottom: 24px;
+}
+
+.pagina-servicios .enlace-contacto {
+    display: inline-block;
+    font-size: 16px;
+    color: #202020;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.pagina-servicios .enlace-contacto:focus-visible {
+    outline: 2px solid #202020;
+    outline-offset: 4px;
+}
+
+/* Responsive movil servicios */
+@media (max-width: 768px) {
+    .pagina-servicios > main {
+        padding: 0 24px;
+    }
+
+    .pagina-servicios h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .pagina-servicios .bajada-servicios {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .pagina-servicios .presentacion-servicios {
+        margin-bottom: 48px;
+    }
+
+    .pagina-servicios .listado-servicios {
+        margin-bottom: 48px;
+    }
+
+    .pagina-servicios .item-servicio {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+
+    .pagina-servicios .cierre-servicios {
+        padding-bottom: 64px;
+    }
+}
+
+/* CSS contacto */
+
+.pagina-contacto .introduccion-contacto {
+    margin-bottom: 64px;
+}
+
+.pagina-contacto h1 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #202020;
+}
+
+.pagina-contacto .bajada-contacto {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #202020;
+    max-width: 580px;
+    margin-bottom: 0;
+}
+
+
+.pagina-contacto .seccion-contacto {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 96px;
+}
+
+/* Columna Izquierda: Datos Directos */
+.pagina-contacto .datos-directos {
+    flex: 1;
+    max-width: 480px;
+}
+
+.pagina-contacto .datos-directos p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.pagina-contacto .datos-directos a {
+    color: #202020;
+    text-decoration: none;
+}
+
+.pagina-contacto .datos-directos a:hover,
+.pagina-contacto .datos-directos a:focus-visible {
+    text-decoration: underline;
+}
+
+/* Columna Derecha: Formulario */
+.pagina-contacto .formulario-contacto {
+    flex: 1;
+    max-width: 580px;
+}
+
+.pagina-contacto .campo-formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.pagina-contacto .campo-formulario label {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #686863;
+    margin-bottom: 8px;
+}
+
+.pagina-contacto .campo-formulario input,
+.pagina-contacto .campo-formulario textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 16px;
+    color: #202020;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #202020;
+    border-radius: 0;
+    padding: 8px 0;
+}
+
+.pagina-contacto .campo-formulario textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.pagina-contacto .campo-formulario input:focus,
+.pagina-contacto .campo-formulario textarea:focus {
+    outline: none;
+    border-bottom-width: 2px;
+}
+
+.pagina-contacto .boton-enviar {
+    display: inline-block;
+    padding: 12px 36px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    color: #202020;
+    background-color: transparent;
+    border: 1px solid #202020;
+    cursor: pointer;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagina-contacto .boton-enviar:hover {
+    background-color: #202020;
+    color: #f8f7f3;
+}
+
+.pagina-contacto .boton-enviar:focus-visible {
+    outline: 2px solid #202020;
+    outline-offset: 4px;
+}
+
+.pagina-contacto .nota-formulario {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #686863;
+    margin-bottom: 0;
+}
+
+/* Responsive movil contacto */
+@media (max-width: 768px) {
+    .pagina-contacto > main {
+        padding: 0 24px;
+    }
+
+    .pagina-contacto h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .pagina-contacto .bajada-contacto {
+        font-size: 16px;
+    }
+
+    .pagina-contacto .introduccion-contacto {
+        margin-bottom: 48px;
+    }
+
+    .pagina-contacto .seccion-contacto {
+        flex-direction: column;
+        gap: 48px;
+        padding-bottom: 64px;
+    }
+
+    .pagina-contacto .datos-directos,
+    .pagina-contacto .formulario-contacto {
+        max-width: 100%;
+    }
+}
